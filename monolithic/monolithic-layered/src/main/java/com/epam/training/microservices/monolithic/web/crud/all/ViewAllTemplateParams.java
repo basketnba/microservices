@@ -8,12 +8,12 @@ import lombok.Singular;
 
 @Data
 @Builder
-public class ViewAllTemplateParams {
+public class ViewAllTemplateParams<T> {
 
   private String title;
 
   @Singular
-  private List<TextColumnModel> columns;
+  private List<TextColumnModel<T>> columns;
 
   @Builder.Default
   private String viewName = "common/index";

@@ -24,19 +24,19 @@ public class SymptomController implements CrudController<Symptom> {
   private SymptomService symptomService;
 
   @Override
-  public ViewAllTemplateParams getViewAllTemplateParams() {
-    return ViewAllTemplateParams.builder()
+  public ViewAllTemplateParams<Symptom> getViewAllTemplateParams() {
+    return ViewAllTemplateParams.<Symptom>builder()
         .title("Symptoms")
         .column(new LinkColumnModel<>("Name", Symptom::getName, s -> "/symptoms/" + s.getId()))
         .build();
   }
 
   @Override
-  public ViewSingleTemplateParams getViewSingleTemplateParams() {
-    return ViewSingleTemplateParams.builder()
+  public ViewSingleTemplateParams<Symptom> getViewSingleTemplateParams() {
+    return ViewSingleTemplateParams.<Symptom>builder()
         .title("Edit Symptom")
-        .field(new HiddenFieldModel("id", "id"))
-        .field(new TextFieldModel("Name", "name"))
+        .field(new HiddenFieldModel<>("id", "id"))
+        .field(new TextFieldModel<>("Name", "name"))
         .build();
   }
 

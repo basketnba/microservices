@@ -30,12 +30,12 @@ public class DeliveryController implements ViewAllSupport<Delivery> {
   }
 
   @Override
-  public ViewAllTemplateParams getViewAllTemplateParams() {
-    return ViewAllTemplateParams.builder()
+  public ViewAllTemplateParams<Delivery> getViewAllTemplateParams() {
+    return ViewAllTemplateParams.<Delivery>builder()
         .title("Delivery")
         .column(new LinkColumnModel<>("Address", Delivery::getAddressLine,
             d -> "/delivery/" + d.getId()))
-        .column(new TextColumnModel<Delivery>("Status", d -> d.getStatus().name()))
+        .column(new TextColumnModel<>("Status", d -> d.getStatus().name()))
         .build();
   }
 

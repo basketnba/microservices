@@ -21,19 +21,19 @@ public class DrugController implements CrudController<Drug> {
   private DrugService drugService;
 
   @Override
-  public ViewAllTemplateParams getViewAllTemplateParams() {
-    return ViewAllTemplateParams.builder()
+  public ViewAllTemplateParams<Drug> getViewAllTemplateParams() {
+    return ViewAllTemplateParams.<Drug>builder()
         .title("Drugs")
         .column(new LinkColumnModel<>("Name", Drug::getName, drug -> "/drugs/" + drug.getId()))
         .build();
   }
 
   @Override
-  public ViewSingleTemplateParams getViewSingleTemplateParams() {
-    return ViewSingleTemplateParams.builder()
+  public ViewSingleTemplateParams<Drug> getViewSingleTemplateParams() {
+    return ViewSingleTemplateParams.<Drug>builder()
         .title("Edit Drug")
-        .field(new HiddenFieldModel("id", "id"))
-        .field(new TextFieldModel("Name", "name"))
+        .field(new HiddenFieldModel<>("id", "id"))
+        .field(new TextFieldModel<>("Name", "name"))
         .build();
   }
 

@@ -8,7 +8,7 @@ import lombok.Singular;
 
 @Data
 @Builder
-public class ViewSingleTemplateParams {
+public class ViewSingleTemplateParams<T> {
 
   private String title;
 
@@ -16,5 +16,5 @@ public class ViewSingleTemplateParams {
   private String viewName = "common/single";
 
   @Singular
-  private List<FieldModel> fields;
+  private List<FieldModel<T>> fields;
 }

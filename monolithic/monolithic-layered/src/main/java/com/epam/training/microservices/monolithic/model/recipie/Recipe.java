@@ -21,12 +21,14 @@ public class Recipe {
   /**
    * A doctor who issues the recipie.
    */
+  @JoinColumn(name = "doctor_id")
   @ManyToOne(fetch = FetchType.EAGER)
   private Doctor doctor;
 
   /**
    * A recipient of the recipie.
    */
+  @JoinColumn(name = "recipient_id")
   @ManyToOne(fetch = FetchType.EAGER)
   private Recipient recipient;
 

@@ -24,6 +24,6 @@ public class Recipient {
   /**
    * A collection of recipes associated with this recipient.
    */
-  @OneToMany(fetch = FetchType.LAZY)
+  @OneToMany(fetch = FetchType.LAZY, mappedBy = "recipient", cascade = CascadeType.ALL)
   private Set<Recipe> recipes = Sets.newHashSet();
 }

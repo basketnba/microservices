@@ -1,7 +1,15 @@
 spring:
   profiles:
     active: dev
+  h2:
+    console.enabled: true
   datasource:
-    url: jdbc:h2:mem:monolithic-layered
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:file:~/IdeaProjects/h2/monolithic-layered;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+    username: sa
+    password: password
   jpa:
+    hibernate:
+      ddl-auto: update
     open-in-view: false
+    database-platform: org.hibernate.dialect.H2Dialect

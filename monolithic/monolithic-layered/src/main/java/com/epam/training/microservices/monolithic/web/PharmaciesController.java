@@ -27,8 +27,8 @@ public class PharmaciesController implements CrudController<Pharmacy> {
   }
 
   @Override
-  public ViewAllTemplateParams getViewAllTemplateParams() {
-    return ViewAllTemplateParams.builder()
+  public ViewAllTemplateParams<Pharmacy> getViewAllTemplateParams() {
+    return ViewAllTemplateParams.<Pharmacy>builder()
         .title("Pharmacies")
         .column(new LinkColumnModel<>("Name", Pharmacy::getName, p -> "/pharmacies/" + p.getId()))
         .column(new TextColumnModel<>("Address", Pharmacy::getAddress))
@@ -36,12 +36,12 @@ public class PharmaciesController implements CrudController<Pharmacy> {
   }
 
   @Override
-  public ViewSingleTemplateParams getViewSingleTemplateParams() {
-    return ViewSingleTemplateParams.builder()
+  public ViewSingleTemplateParams<Pharmacy> getViewSingleTemplateParams() {
+    return ViewSingleTemplateParams.<Pharmacy>builder()
         .title("Edit Pharmacy")
-        .field(new HiddenFieldModel("id", "id"))
-        .field(new TextFieldModel("Name", "name"))
-        .field(new TextFieldModel("Address", "address"))
+        .field(new HiddenFieldModel<>("id", "id"))
+        .field(new TextFieldModel<>("Name", "name"))
+        .field(new TextFieldModel<>("Address", "address"))
         .build();
   }
 }

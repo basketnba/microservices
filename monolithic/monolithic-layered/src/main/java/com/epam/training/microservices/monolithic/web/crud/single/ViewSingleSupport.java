@@ -7,11 +7,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 public interface ViewSingleSupport<T> extends CrudSupport<T> {
 
-  ViewSingleTemplateParams getViewSingleTemplateParams();
+  ViewSingleTemplateParams<T> getViewSingleTemplateParams();
 
   @GetMapping("/{id}")
   default ModelAndView viewSingle(ModelAndView modelAndView, @PathVariable("id") Long id) {
-    final ViewSingleTemplateParams templateParams = getViewSingleTemplateParams();
+    final ViewSingleTemplateParams<T> templateParams = getViewSingleTemplateParams();
 
     modelAndView.setViewName(templateParams.getViewName());
     modelAndView.addObject("pageTitle", templateParams.getTitle());

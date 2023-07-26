@@ -6,11 +6,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 public interface ViewAllSupport<T> extends CrudSupport<T> {
 
-  ViewAllTemplateParams getViewAllTemplateParams();
+  ViewAllTemplateParams<T> getViewAllTemplateParams();
 
   @GetMapping("")
   default ModelAndView viewAll(ModelAndView modelAndView) {
-    final ViewAllTemplateParams templateParams = getViewAllTemplateParams();
+    final ViewAllTemplateParams<T> templateParams = getViewAllTemplateParams();
 
     modelAndView.setViewName(templateParams.getViewName());
     modelAndView.addObject("items", getService().findAll());

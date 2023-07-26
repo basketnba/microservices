@@ -21,8 +21,8 @@ public class DiseaseController implements CrudController<Disease> {
   private DiseaseService diseaseService;
 
   @Override
-  public ViewAllTemplateParams getViewAllTemplateParams() {
-    return ViewAllTemplateParams.builder()
+  public ViewAllTemplateParams<Disease> getViewAllTemplateParams() {
+    return ViewAllTemplateParams.<Disease>builder()
         .title("Diseases")
         .column(new LinkColumnModel<>("Name", Disease::getName,
             disease -> "/diseases/" + disease.getId()))
@@ -30,11 +30,11 @@ public class DiseaseController implements CrudController<Disease> {
   }
 
   @Override
-  public ViewSingleTemplateParams getViewSingleTemplateParams() {
-    return ViewSingleTemplateParams.builder()
+  public ViewSingleTemplateParams<Disease> getViewSingleTemplateParams() {
+    return ViewSingleTemplateParams.<Disease>builder()
         .title("Edit disease")
-        .field(new HiddenFieldModel("id", "id"))
-        .field(new TextFieldModel("Name", "name"))
+        .field(new HiddenFieldModel<>("id", "id"))
+        .field(new TextFieldModel<>("Name", "name"))
         .build();
   }
 

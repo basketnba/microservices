@@ -16,10 +16,10 @@
   <packaging>pom</packaging>
 
   <modules>
-<!--    <module>monolithic-hexagonal-core</module>-->
-<!--    <module>monolithic-hexagonal-persistence</module>-->
-<!--    <module>monolithic-hexagonal-web</module>-->
-<!--    <module>monolithic-hexagonal-app</module>-->
+    <module>monolithic-hexagonal-core</module>
+    <module>monolithic-hexagonal-persistence</module>
+    <module>monolithic-hexagonal-web</module>
+    <module>monolithic-hexagonal-app</module>
   </modules>
 
   <dependencyManagement>
