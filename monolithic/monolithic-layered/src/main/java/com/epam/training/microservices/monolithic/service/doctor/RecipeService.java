@@ -5,14 +5,14 @@ import com.epam.training.microservices.monolithic.model.recipie.Recipe;
 import com.epam.training.microservices.monolithic.model.recipie.Recipient;
 import java.time.LocalDate;
 import java.util.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class RecipeService {
 
-  @Autowired
-  private RecipeRepository recipeRepository;
+  private final RecipeRepository recipeRepository;
 
   public Recipe save(Recipe recipe) {
     return recipeRepository.save(recipe);

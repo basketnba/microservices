@@ -7,7 +7,7 @@ import com.epam.training.microservices.monolithic.web.crud.all.ViewAllSupport;
 import com.epam.training.microservices.monolithic.web.crud.all.ViewAllTemplateParams;
 import com.epam.training.microservices.monolithic.web.crud.all.column.LinkColumnModel;
 import com.epam.training.microservices.monolithic.web.crud.all.column.TextColumnModel;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,14 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/delivery")
 public class DeliveryController implements ViewAllSupport<Delivery> {
 
-  @Autowired
-  private DeliveryService deliveryService;
-
-  @Autowired
-  private DeliveryTransformer deliveryTransformer;
+  private final DeliveryService deliveryService;
+  private final DeliveryTransformer deliveryTransformer;
 
   @Override
   public CrudService<Delivery> getService() {

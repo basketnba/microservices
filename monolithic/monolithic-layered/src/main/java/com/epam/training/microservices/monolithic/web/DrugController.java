@@ -9,16 +9,16 @@ import com.epam.training.microservices.monolithic.web.crud.all.column.LinkColumn
 import com.epam.training.microservices.monolithic.web.crud.single.ViewSingleTemplateParams;
 import com.epam.training.microservices.monolithic.web.crud.single.form.HiddenFieldModel;
 import com.epam.training.microservices.monolithic.web.crud.single.form.TextFieldModel;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/drugs")
 public class DrugController implements CrudController<Drug> {
 
-  @Autowired
-  private DrugService drugService;
+  private final DrugService drugService;
 
   @Override
   public ViewAllTemplateParams<Drug> getViewAllTemplateParams() {

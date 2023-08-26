@@ -7,7 +7,7 @@ import javax.persistence.*;
 import lombok.Data;
 
 /**
- * A recipie to apply.
+ * A recipe to apply.
  */
 @Data
 @Entity
@@ -19,21 +19,21 @@ public class Recipe {
   private Long id;
 
   /**
-   * A doctor who issues the recipie.
+   * A doctor who issues the recipe.
    */
   @JoinColumn(name = "doctor_id")
   @ManyToOne(fetch = FetchType.EAGER)
   private Doctor doctor;
 
   /**
-   * A recipient of the recipie.
+   * A recipient of the recipe.
    */
   @JoinColumn(name = "recipient_id")
   @ManyToOne(fetch = FetchType.EAGER)
   private Recipient recipient;
 
   /**
-   * A content of the recipie.
+   * A content of the recipe.
    */
   @OneToMany(fetch = FetchType.LAZY, mappedBy = "recipe", cascade = CascadeType.ALL)
   private Set<RecipeLine> lines = Sets.newHashSet();
