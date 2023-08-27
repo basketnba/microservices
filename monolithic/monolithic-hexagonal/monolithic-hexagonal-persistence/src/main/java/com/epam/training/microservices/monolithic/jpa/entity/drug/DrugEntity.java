@@ -1,7 +1,7 @@
 package com.epam.training.microservices.monolithic.jpa.entity.drug;
 
-import com.epam.training.microservices.monolithic.model.disease.Disease;
-import com.epam.training.microservices.monolithic.model.disease.Symptom;
+import com.epam.training.microservices.monolithic.jpa.entity.disease.DiseaseEntity;
+import com.epam.training.microservices.monolithic.jpa.entity.disease.SymptomEntity;
 import com.google.common.collect.Sets;
 import java.util.Set;
 import javax.persistence.*;
@@ -45,7 +45,7 @@ public class DrugEntity {
       joinColumns = @JoinColumn(name = "drug_id"),
       inverseJoinColumns = @JoinColumn(name = "disease_id")
   )
-  private Set<Disease> diseases = Sets.newHashSet();
+  private Set<DiseaseEntity> diseases = Sets.newHashSet();
 
   /**
    * A collection of symptoms this drug can help with.
@@ -56,5 +56,5 @@ public class DrugEntity {
       joinColumns = @JoinColumn(name = "drug_id"),
       inverseJoinColumns = @JoinColumn(name = "symptom_id")
   )
-  private Set<Symptom> symptoms = Sets.newHashSet();
+  private Set<SymptomEntity> symptoms = Sets.newHashSet();
 }

@@ -1,6 +1,6 @@
 package com.epam.training.microservices.monolithic.jpa.entity.delivery;
 
-import com.epam.training.microservices.monolithic.model.drug.Drug;
+import com.epam.training.microservices.monolithic.jpa.entity.drug.DrugEntity;
 import javax.persistence.*;
 import lombok.Data;
 
@@ -22,7 +22,7 @@ public class DeliveryLineEntity {
    */
   @JoinColumn(name = "drug_id")
   @ManyToOne(fetch = FetchType.EAGER)
-  private Drug drug;
+  private DrugEntity drug;
 
   /**
    * Amount of drug to deliver.

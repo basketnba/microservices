@@ -4,7 +4,7 @@ import javax.persistence.*;
 import lombok.Data;
 
 /**
- * An entity to store information about doctors who issue the recipiees.
+ * An entity to store information about doctors who issue the recipes.
  */
 @Data
 @Entity

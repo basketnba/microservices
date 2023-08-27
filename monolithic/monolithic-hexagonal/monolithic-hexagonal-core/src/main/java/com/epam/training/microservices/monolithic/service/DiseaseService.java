@@ -4,14 +4,14 @@ import com.epam.training.microservices.monolithic.model.disease.Disease;
 import com.epam.training.microservices.monolithic.repository.CrudRepository;
 import com.epam.training.microservices.monolithic.repository.DiseaseRepository;
 import java.util.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class DiseaseService implements CrudService<Disease> {
 
-  @Autowired
-  private DiseaseRepository diseaseRepository;
+  private final DiseaseRepository diseaseRepository;
 
   @Override
   public CrudRepository<Disease, Long> getRepository() {
