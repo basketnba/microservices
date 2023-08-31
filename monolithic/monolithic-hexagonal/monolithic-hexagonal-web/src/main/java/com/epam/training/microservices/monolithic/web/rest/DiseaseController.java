@@ -1,8 +1,8 @@
 package com.epam.training.microservices.monolithic.web.rest;
 
-import com.epam.training.microservices.monolithic.service.DeliveryService;
-import com.epam.training.microservices.monolithic.web.model.DeliveryModel;
-import com.epam.training.microservices.monolithic.web.transformer.DeliveryModelTransformer;
+import com.epam.training.microservices.monolithic.service.DiseaseService;
+import com.epam.training.microservices.monolithic.web.model.DiseaseModel;
+import com.epam.training.microservices.monolithic.web.transformer.DiseaseModelTransformer;
 import java.util.Collection;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/delivery")
-public class DeliveryController {
+@RequestMapping("/diseases")
+public class DiseaseController {
 
-  private final DeliveryService deliveryService;
-  private final DeliveryModelTransformer transformer;
+  private final DiseaseService diseaseService;
+  private final DiseaseModelTransformer transformer;
 
   @GetMapping("/")
-  public Collection<DeliveryModel> findAll() {
-    return deliveryService.findAll()
+  public Collection<DiseaseModel> findAll() {
+    return diseaseService.findAll()
         .stream()
         .map(transformer::toModel)
         .collect(Collectors.toList());

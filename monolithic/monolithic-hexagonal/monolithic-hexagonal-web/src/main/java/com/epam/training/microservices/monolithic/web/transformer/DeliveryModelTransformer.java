@@ -1,18 +1,14 @@
 package com.epam.training.microservices.monolithic.web.transformer;
 
+import com.epam.training.microservices.monolithic.config.MapperConfiguration;
 import com.epam.training.microservices.monolithic.model.delivery.Delivery;
 import com.epam.training.microservices.monolithic.web.model.DeliveryModel;
-import org.springframework.stereotype.Component;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
-@Component
-public class DeliveryModelTransformer {
+@Mapper(config = MapperConfiguration.class)
+public interface DeliveryModelTransformer {
 
-  public DeliveryModel toModel(Delivery delivery) {
-    return DeliveryModel.builder()
-        .id(delivery.getId())
-        .addressLine(delivery.getAddressLine())
-        .pharmacyName(delivery.getPharmacy().getName())
-        .status(delivery.getStatus())
-        .build();
-  }
+  @Mapping(target = "pharmacyName", source = "pharmacy.name")
+  DeliveryModel toModel(Delivery delivery);
 }
