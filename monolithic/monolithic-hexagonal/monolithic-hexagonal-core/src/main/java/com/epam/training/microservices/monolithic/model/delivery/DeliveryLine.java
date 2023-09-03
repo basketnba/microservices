@@ -11,8 +11,6 @@ public class DeliveryLine {
 
   private Long id;
 
-  private Delivery delivery;
-
   /**
    * A drug to deliver.
    */

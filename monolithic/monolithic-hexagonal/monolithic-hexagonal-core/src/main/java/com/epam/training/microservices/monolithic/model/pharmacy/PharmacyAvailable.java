@@ -8,8 +8,6 @@ public class PharmacyAvailable {
 
   private Long id;
 
-  private Pharmacy pharmacy;
-
   private Drug drug;
 
   private Long amount;

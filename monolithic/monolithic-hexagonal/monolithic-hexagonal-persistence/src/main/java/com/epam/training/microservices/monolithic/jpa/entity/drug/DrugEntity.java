@@ -39,7 +39,7 @@ public class DrugEntity {
   /**
    * A collection of diseases that are cured by this drug.
    */
-  @ManyToMany(fetch = FetchType.LAZY)
+  @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
       name = "drug_diseases",
       joinColumns = @JoinColumn(name = "drug_id"),
@@ -50,7 +50,7 @@ public class DrugEntity {
   /**
    * A collection of symptoms this drug can help with.
    */
-  @ManyToMany(fetch = FetchType.LAZY)
+  @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
       name = "drug_symptoms",
       joinColumns = @JoinColumn(name = "drug_id"),

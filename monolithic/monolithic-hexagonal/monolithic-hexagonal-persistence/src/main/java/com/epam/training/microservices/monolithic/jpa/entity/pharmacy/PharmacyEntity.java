@@ -20,6 +20,6 @@ public class PharmacyEntity {
 
   private String address;
 
-  @OneToMany(mappedBy = "pharmacy", cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "pharmacy", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
   private Set<PharmacyAvailableEntity> available = Sets.newHashSet();
 }
