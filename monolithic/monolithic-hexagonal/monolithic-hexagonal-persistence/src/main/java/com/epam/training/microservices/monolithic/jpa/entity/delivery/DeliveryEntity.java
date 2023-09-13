@@ -41,6 +41,6 @@ public class DeliveryEntity {
   /**
    * Content of the delivery.
    */
-  @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "delivery")
+  @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "delivery")
   private Set<DeliveryLineEntity> content = Sets.newHashSet();
 }
