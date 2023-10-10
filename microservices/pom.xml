@@ -17,6 +17,6 @@
   <packaging>pom</packaging>
 
   <modules>
-
+    <module>microservice-service-discovery</module>
   </modules>
 </project>
