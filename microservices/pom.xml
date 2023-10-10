@@ -18,5 +18,6 @@
 
   <modules>
     <module>microservice-service-discovery</module>
+    <module>microservice-drugs</module>
   </modules>
 </project>
