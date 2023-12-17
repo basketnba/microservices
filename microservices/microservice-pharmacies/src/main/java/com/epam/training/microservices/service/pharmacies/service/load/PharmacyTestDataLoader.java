@@ -2,8 +2,8 @@ package com.epam.training.microservices.service.pharmacies.service.load;
 
 import com.epam.training.microservices.service.pharmacies.model.Pharmacy;
 import com.epam.training.microservices.service.pharmacies.model.PharmacyAvailable;
-import com.epam.training.microservices.service.pharmacies.repository.DrugServiceClient;
 import com.epam.training.microservices.service.pharmacies.repository.PharmacyRepository;
+import com.epam.training.microservices.service.pharmacies.service.drug.DrugService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Cleanup;
@@ -30,7 +30,7 @@ public class PharmacyTestDataLoader implements CommandLineRunner {
 
   private final ObjectMapper objectMapper;
   private final PharmacyRepository pharmacyRepository;
-  private final DrugServiceClient drugClient;
+  private final DrugService drugClient;
 
   @Override
   @SneakyThrows

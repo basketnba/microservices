@@ -24,7 +24,7 @@
     <spring-boot.version>2.6.2</spring-boot.version>
     <spring-cloud.version>2021.0.0</spring-cloud.version>
     <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
-    <org.projectlombok.version>1.18.22</org.projectlombok.version>
+    <org.projectlombok.version>1.18.26</org.projectlombok.version>
     <org.lombok-mapstruct-binding.version>0.1.0</org.lombok-mapstruct-binding.version>
   </properties>
 
