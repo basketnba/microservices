@@ -5,6 +5,8 @@ spring:
     console.enabled: true
   datasource:
     driverClassName: org.h2.Driver
+    #remove the file in the directory before run (to get the database schema) or uncomment this url
+    #url: jdbc:h2:mem:monolithic-layered
     url: jdbc:h2:file:~/IdeaProjects/h2/monolithic-layered;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
     username: sa
     password: password
