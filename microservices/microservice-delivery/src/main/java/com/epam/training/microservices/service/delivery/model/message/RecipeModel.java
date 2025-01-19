@@ -9,6 +9,7 @@ import java.util.Collection;
 @Data
 public class RecipeModel {
 
+  private Long id;
   private PersonModel doctor;
   private PersonModel recipient;
   private Collection<RecipeLineModel> lines = Lists.newArrayList();

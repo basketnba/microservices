@@ -12,7 +12,7 @@ import java.util.Optional;
 public class DrugServiceClient {
 
   public Optional<Long> getDrugIdByName(String drugName) {
-    final Traverson traverson = new Traverson(URI.create("http://localhost:8082/"),
+    final Traverson traverson = new Traverson(URI.create("http://localhost:8083/"),
         MediaTypes.HAL_JSON);
 
     final DrugModel record = traverson
