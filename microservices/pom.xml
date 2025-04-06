@@ -22,5 +22,6 @@
     <module>microservice-pharmacies</module>
     <module>microservice-recipes</module>
     <module>microservice-delivery</module>
+    <module>microservice-saga-state-machine</module>
   </modules>
 </project>

@@ -26,6 +26,7 @@
     <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
     <org.projectlombok.version>1.18.26</org.projectlombok.version>
     <org.lombok-mapstruct-binding.version>0.1.0</org.lombok-mapstruct-binding.version>
+    <spring-statemachine.version>3.0.1</spring-statemachine.version>
   </properties>
 
   <dependencies>
@@ -76,6 +77,13 @@
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
         <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.statemachine</groupId>
+        <artifactId>spring-statemachine-bom</artifactId>
+        <version>${spring-statemachine.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
