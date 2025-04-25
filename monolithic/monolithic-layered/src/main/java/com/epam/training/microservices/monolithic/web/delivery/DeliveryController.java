@@ -32,7 +32,7 @@ public class DeliveryController implements ViewAllSupport<Delivery> {
     return ViewAllTemplateParams.<Delivery>builder()
         .title("Delivery")
         .column(new LinkColumnModel<>("Address", Delivery::getAddressLine,
-            d -> "/delivery/" + d.getId()))
+            d -> "/com.epam.training.service.delivery/" + d.getId()))
         .column(new TextColumnModel<>("Status", d -> d.getStatus().name()))
         .build();
   }

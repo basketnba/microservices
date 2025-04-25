@@ -9,7 +9,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * Stores information about the delivery.
+ * Stores information about the com.epam.training.service.delivery.
  */
 @Data
 @Entity
@@ -22,12 +22,12 @@ public class DeliveryEntity {
   private Long id;
 
   /**
-   * Address of the delivery.
+   * Address of the com.epam.training.service.delivery.
    */
   private String addressLine;
 
   /**
-   * Status of the delivery.
+   * Status of the com.epam.training.service.delivery.
    */
   private DeliveryStatus status;
 
@@ -39,7 +39,7 @@ public class DeliveryEntity {
   private PharmacyEntity pharmacy;
 
   /**
-   * Content of the delivery.
+   * Content of the com.epam.training.service.delivery.
    */
   @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "delivery")
   private Set<DeliveryLineEntity> content = Sets.newHashSet();
